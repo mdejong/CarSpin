@@ -71,7 +71,7 @@
   resLoader.movieRGBFilename = rgbResourceName;
   resLoader.movieAlphaFilename = alphaResourceName;
   resLoader.outPath = tmpPath;
-  resLoader.alwaysGenerateAdler = TRUE;
+  //resLoader.alwaysGenerateAdler = TRUE;
   
   AVAnimatorMedia *media = [AVAnimatorMedia aVAnimatorMedia];
   media.resourceLoader = resLoader;
@@ -94,6 +94,10 @@
     layer.backgroundColor = [UIColor orangeColor].CGColor;
   }
   
+  if (TRUE) {
+    layer.backgroundColor = [UIColor greenColor].CGColor;
+  }
+  
   [self.view.layer addSublayer:layer];
   
   AVAnimatorLayer *animatorLayer = [AVAnimatorLayer aVAnimatorLayer:layer];
@@ -106,6 +110,8 @@
   [animatorLayer attachMedia:media];
   
   media.animatorRepeatCount = INT_MAX;
+  
+  media.animatorFrameDuration = 1.0 / 30;
   
   [media prepareToAnimate];
   
@@ -139,6 +145,24 @@
   AVMvidFrameDecoder *decoder = (AVMvidFrameDecoder*) media.frameDecoder;
   NSString *file = [decoder.filePath lastPathComponent];
   NSLog( @"animatorPreparedNotification %@", file);
+  
+  // Size of movie is available now
+  
+  CGSize videoSize = CGSizeMake(self.carMedia.frameDecoder.width, self.carMedia.frameDecoder.height);
+  
+  CGRect videoFrame = CGRectMake(0, 0, 0, 0);
+  
+  videoFrame.size = videoSize;
+  
+  CALayer *layer = self.carAnimatorLayer.layer;
+  
+  layer.frame = videoFrame;
+  
+  // Center in view
+  
+  layer.anchorPoint = CGPointMake(0.5, 0.5);
+  
+  layer.position = (CGPoint){CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds)};
   
   [self.carMedia startAnimator];
   
