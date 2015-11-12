@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C4EF0701BF40A8400C2A73B /* AVAssetMixAlphaResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4EF06F1BF40A8400C2A73B /* AVAssetMixAlphaResourceLoader.m */; settings = {ASSET_TAGS = (); }; };
+		3C4EF0721BF40B1C00C2A73B /* low_car_ANI_mix_30_main.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 3C4EF0711BF40B1C00C2A73B /* low_car_ANI_mix_30_main.m4v */; settings = {ASSET_TAGS = (); }; };
 		3C80C2591BEABC1B003910B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C80C2581BEABC1B003910B9 /* main.m */; };
 		3C80C25C1BEABC1B003910B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C80C25B1BEABC1B003910B9 /* AppDelegate.m */; };
 		3C80C25F1BEABC1B003910B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C80C25E1BEABC1B003910B9 /* ViewController.m */; };
 		3C80C2621BEABC1B003910B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C80C2601BEABC1B003910B9 /* Main.storyboard */; };
 		3C80C2641BEABC1B003910B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C80C2631BEABC1B003910B9 /* Assets.xcassets */; };
 		3C80C2671BEABC1B003910B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C80C2651BEABC1B003910B9 /* LaunchScreen.storyboard */; };
-		3C80C2701BEAC90A003910B9 /* low_car_ANI_alpha_CRF_30_24BPP.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 3C80C26E1BEAC90A003910B9 /* low_car_ANI_alpha_CRF_30_24BPP.m4v */; settings = {ASSET_TAGS = (); }; };
-		3C80C2711BEAC90A003910B9 /* low_car_ANI_rgb_CRF_30_24BPP.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 3C80C26F1BEAC90A003910B9 /* low_car_ANI_rgb_CRF_30_24BPP.m4v */; settings = {ASSET_TAGS = (); }; };
 		3C80C2E01BEACAAA003910B9 /* ApngConvertMaxvid.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C80C2741BEACAAA003910B9 /* ApngConvertMaxvid.m */; settings = {ASSET_TAGS = (); }; };
 		3C80C2E11BEACAAA003910B9 /* AV7zApng2MvidResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C80C2761BEACAAA003910B9 /* AV7zApng2MvidResourceLoader.m */; settings = {ASSET_TAGS = (); }; };
 		3C80C2E21BEACAAA003910B9 /* AV7zAppResourceLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C80C2781BEACAAA003910B9 /* AV7zAppResourceLoader.m */; settings = {ASSET_TAGS = (); }; };
@@ -70,6 +70,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C4EF06E1BF40A8400C2A73B /* AVAssetMixAlphaResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVAssetMixAlphaResourceLoader.h; sourceTree = "<group>"; };
+		3C4EF06F1BF40A8400C2A73B /* AVAssetMixAlphaResourceLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVAssetMixAlphaResourceLoader.m; sourceTree = "<group>"; };
+		3C4EF0711BF40B1C00C2A73B /* low_car_ANI_mix_30_main.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = low_car_ANI_mix_30_main.m4v; sourceTree = "<group>"; };
 		3C80C2541BEABC1B003910B9 /* CarSpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarSpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C80C2581BEABC1B003910B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C80C25A1BEABC1B003910B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -80,8 +83,6 @@
 		3C80C2631BEABC1B003910B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C80C2661BEABC1B003910B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C80C2681BEABC1B003910B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C80C26E1BEAC90A003910B9 /* low_car_ANI_alpha_CRF_30_24BPP.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = low_car_ANI_alpha_CRF_30_24BPP.m4v; sourceTree = "<group>"; };
-		3C80C26F1BEAC90A003910B9 /* low_car_ANI_rgb_CRF_30_24BPP.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = low_car_ANI_rgb_CRF_30_24BPP.m4v; sourceTree = "<group>"; };
 		3C80C2731BEACAAA003910B9 /* ApngConvertMaxvid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApngConvertMaxvid.h; sourceTree = "<group>"; };
 		3C80C2741BEACAAA003910B9 /* ApngConvertMaxvid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApngConvertMaxvid.m; sourceTree = "<group>"; };
 		3C80C2751BEACAAA003910B9 /* AV7zApng2MvidResourceLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AV7zApng2MvidResourceLoader.h; sourceTree = "<group>"; };
@@ -240,8 +241,7 @@
 		3C80C2571BEABC1B003910B9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3C80C26E1BEAC90A003910B9 /* low_car_ANI_alpha_CRF_30_24BPP.m4v */,
-				3C80C26F1BEAC90A003910B9 /* low_car_ANI_rgb_CRF_30_24BPP.m4v */,
+				3C4EF0711BF40B1C00C2A73B /* low_car_ANI_mix_30_main.m4v */,
 				3C80C2581BEABC1B003910B9 /* main.m */,
 				3C80C3131BEACC5F003910B9 /* libz.tbd */,
 			);
@@ -281,6 +281,8 @@
 				3C80C28E1BEACAAA003910B9 /* AVAssetFrameDecoder.m */,
 				3C80C28F1BEACAAA003910B9 /* AVAssetJoinAlphaResourceLoader.h */,
 				3C80C2901BEACAAA003910B9 /* AVAssetJoinAlphaResourceLoader.m */,
+				3C4EF06E1BF40A8400C2A73B /* AVAssetMixAlphaResourceLoader.h */,
+				3C4EF06F1BF40A8400C2A73B /* AVAssetMixAlphaResourceLoader.m */,
 				3C80C2911BEACAAA003910B9 /* AVAssetReaderConvertMaxvid.h */,
 				3C80C2921BEACAAA003910B9 /* AVAssetReaderConvertMaxvid.m */,
 				3C80C2931BEACAAA003910B9 /* AVAssetWriterConvertFromMaxvid.h */,
@@ -442,8 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C80C2671BEABC1B003910B9 /* LaunchScreen.storyboard in Resources */,
-				3C80C2711BEAC90A003910B9 /* low_car_ANI_rgb_CRF_30_24BPP.m4v in Resources */,
-				3C80C2701BEAC90A003910B9 /* low_car_ANI_alpha_CRF_30_24BPP.m4v in Resources */,
+				3C4EF0721BF40B1C00C2A73B /* low_car_ANI_mix_30_main.m4v in Resources */,
 				3C80C2641BEABC1B003910B9 /* Assets.xcassets in Resources */,
 				3C80C2621BEABC1B003910B9 /* Main.storyboard in Resources */,
 			);
@@ -480,6 +481,7 @@
 				3C80C2E21BEACAAA003910B9 /* AV7zAppResourceLoader.m in Sources */,
 				3C80C2F21BEACAAA003910B9 /* AVImageFrameDecoder.m in Sources */,
 				3C80C3091BEACAAA003910B9 /* Delta.c in Sources */,
+				3C4EF0701BF40A8400C2A73B /* AVAssetMixAlphaResourceLoader.m in Sources */,
 				3C80C3111BEACAAA003910B9 /* 7zAlloc.c in Sources */,
 				3C80C3101BEACAAA003910B9 /* Ppmd8Dec.c in Sources */,
 				3C80C30D1BEACAAA003910B9 /* Ppmd7.c in Sources */,
@@ -661,6 +663,7 @@
 				3C80C26D1BEABC1B003910B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

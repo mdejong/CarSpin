@@ -9,9 +9,7 @@
 
 #import "AVFileUtil.h"
 
-#import "AVAssetJoinAlphaResourceLoader.h"
-
-#import "AVApng2MvidResourceLoader.h"
+#import "AVAssetMixAlphaResourceLoader.h"
 
 #import "AVAnimatorMedia.h"
 
@@ -45,8 +43,7 @@
   // Create resource loader that will combine RGB and Alpha values back
   // into one Maxvid file.
 
-  NSString *alphaResourceName = @"low_car_ANI_alpha_CRF_30_24BPP.m4v";
-  NSString *rgbResourceName = @"low_car_ANI_rgb_CRF_30_24BPP.m4v";
+  NSString *mixResourceName = @"low_car_ANI_mix_30_main.m4v";
   
   // Output filename
   
@@ -64,13 +61,12 @@
     NSAssert(worked, @"could not remove file %@", tmpPath);
   }
   
-  // This loader will join 2 H.264 videos together into a single 32BPP .mvid
+  // Loader that reads RGB and Alpha frames and combines to .mvid
   
-  AVAssetJoinAlphaResourceLoader *resLoader = [AVAssetJoinAlphaResourceLoader aVAssetJoinAlphaResourceLoader];
-  
-  resLoader.movieRGBFilename = rgbResourceName;
-  resLoader.movieAlphaFilename = alphaResourceName;
+  AVAssetMixAlphaResourceLoader *resLoader = [AVAssetMixAlphaResourceLoader aVAssetMixAlphaResourceLoader];
+  resLoader.movieFilename = mixResourceName;
   resLoader.outPath = tmpPath;
+  
   //resLoader.alwaysGenerateAdler = TRUE;
   
   AVAnimatorMedia *media = [AVAnimatorMedia aVAnimatorMedia];
