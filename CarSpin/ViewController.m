@@ -138,6 +138,8 @@
   
   NSLog(@"animatorPreparedNotification %@ : videoSize %d x %d", file, (int)videoSize.width, (int)videoSize.height);
   
+  NSLog(@"self.carView : %d x %d", (int)self.carView.frame.size.width, (int)self.carView.frame.size.height);
+  
   [self.carMedia startAnimator];
   
   return;

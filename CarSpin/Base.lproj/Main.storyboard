@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,15 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" misplaced="YES" placeholderIntrinsicWidth="460" placeholderIntrinsicHeight="360" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-SI-wIk" userLabel="carView" customClass="AVAnimatorView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <view contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-SI-wIk" userLabel="carView" customClass="AVAnimatorView">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
                                 <color key="backgroundColor" red="0.49114223109999999" green="1" blue="0.065714141510000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wLZ-SI-wIk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="CHE-rW-Fz0"/>
                             <constraint firstItem="wLZ-SI-wIk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="IQl-U1-9U2"/>
+                            <constraint firstItem="wLZ-SI-wIk" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="3:4" id="cgT-yV-0NP"/>
+                            <constraint firstItem="wLZ-SI-wIk" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="fYb-3L-jbI"/>
                             <constraint firstItem="wLZ-SI-wIk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fyO-zT-NGC"/>
                         </constraints>
                     </view>
