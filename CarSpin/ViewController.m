@@ -9,11 +9,11 @@
 
 #import "AVFileUtil.h"
 
-#import "AVAssetMixAlphaResourceLoader.h"
+#import "AVAnimatorView.h"
 
 #import "AVAnimatorMedia.h"
 
-#import "AVAnimatorLayer.h"
+#import "AVAssetMixAlphaResourceLoader.h"
 
 #import "AVMvidFrameDecoder.h"
 
@@ -21,11 +21,14 @@
 
 @interface ViewController ()
 
-// Explosion
+// Aspect fit view that will contain the rotating Car. This view must maintain
+// the aspect ratio so that the car will not stretch as it rotates around.
+
+@property (nonatomic, retain) IBOutlet AVAnimatorView *carView;
+
+// Media handle to decoded (loopable) file on disk
 
 @property (nonatomic, retain) AVAnimatorMedia *carMedia;
-
-@property (nonatomic, retain) AVAnimatorLayer *carAnimatorLayer;
 
 @end
 
@@ -79,31 +82,15 @@
   AVMvidFrameDecoder *aVMvidFrameDecoder = [AVMvidFrameDecoder aVMvidFrameDecoder];
   media.frameDecoder = aVMvidFrameDecoder;
   
-  // Create layer that video data will be directed into
+  // Media will direct video data into self.carLayer
   
-  CGRect carFrame = self.view.bounds;
-  
-  CALayer *layer = [CALayer layer];
-  layer.frame = carFrame;
+  [self.carView attachMedia:media];
   
   if (FALSE) {
-    layer.backgroundColor = [UIColor orangeColor].CGColor;
+//    self.carView.backgroundColor = [UIColor greenColor];
+    
+    self.carView.backgroundColor = [UIColor whiteColor];
   }
-  
-  if (TRUE) {
-    layer.backgroundColor = [UIColor greenColor].CGColor;
-  }
-  
-  [self.view.layer addSublayer:layer];
-  
-  AVAnimatorLayer *animatorLayer = [AVAnimatorLayer aVAnimatorLayer:layer];
-  
-  self.carAnimatorLayer = animatorLayer;
-  
-  // Finally connect the media object to the layer so that rendering will be
-  // sent to the layer.
-  
-  [animatorLayer attachMedia:media];
   
   media.animatorRepeatCount = INT_MAX;
   
@@ -117,6 +104,10 @@
 - (void) viewDidLoad
 {
   [super viewDidLoad];
+  
+  self.view.backgroundColor = [UIColor redColor];
+  
+  NSAssert(self.carView, @"carView");
   
   [self prepareCarMedia];
   
@@ -140,25 +131,12 @@
   
   AVMvidFrameDecoder *decoder = (AVMvidFrameDecoder*) media.frameDecoder;
   NSString *file = [decoder.filePath lastPathComponent];
-  NSLog( @"animatorPreparedNotification %@", file);
   
   // Size of movie is available now
   
   CGSize videoSize = CGSizeMake(self.carMedia.frameDecoder.width, self.carMedia.frameDecoder.height);
   
-  CGRect videoFrame = CGRectMake(0, 0, 0, 0);
-  
-  videoFrame.size = videoSize;
-  
-  CALayer *layer = self.carAnimatorLayer.layer;
-  
-  layer.frame = videoFrame;
-  
-  // Center in view
-  
-  layer.anchorPoint = CGPointMake(0.5, 0.5);
-  
-  layer.position = (CGPoint){CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds)};
+  NSLog(@"animatorPreparedNotification %@ : videoSize %d x %d", file, (int)videoSize.width, (int)videoSize.height);
   
   [self.carMedia startAnimator];
   
