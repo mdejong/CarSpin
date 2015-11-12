@@ -72,6 +72,8 @@
   
   //resLoader.alwaysGenerateAdler = TRUE;
   
+  NSLog(@"decoding mvid %@", resLoader.outPath);
+  
   AVAnimatorMedia *media = [AVAnimatorMedia aVAnimatorMedia];
   media.resourceLoader = resLoader;
   
