@@ -1471,9 +1471,9 @@
   
   AVFrameDecoder *decoder = self.frameDecoder;
   
-  int actualFrameNum = nextFrameNum;
+  int actualFrameNum = (int) nextFrameNum;
   if (self.reverse) {
-    actualFrameNum = self.frameDecoder.numFrames - 1 - nextFrameNum;
+    actualFrameNum = (int)self.frameDecoder.numFrames - 1 - (int)nextFrameNum;
     //NSLog(@"reverse : nextFrameNum %d : actualFrameNum %d", nextFrameNum, actualFrameNum);
     
     [decoder rewind];
