@@ -119,6 +119,12 @@
                                            selector:@selector(animatorPreparedNotification:)
                                                name:AVAnimatorPreparedToAnimateNotification
                                              object:self.carMedia];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(animatorStopNotification:)
+                                               name:AVAnimatorDidStopNotification
+                                             object:self.carMedia];
+
   return;
 }
 
@@ -141,6 +147,18 @@
   NSLog(@"animatorPreparedNotification %@ : videoSize %d x %d", file, (int)videoSize.width, (int)videoSize.height);
   
   NSLog(@"self.carView : %d x %d", (int)self.carView.frame.size.width, (int)self.carView.frame.size.height);
+  
+  [self.carMedia startAnimator];
+  
+  return;
+}
+
+// Invoked after the animator has finished playback. This logic switches the
+// backwards flag so that the next playback cycle will play from the end of
+// the video to the begining.
+
+- (void)animatorStopNotification:(NSNotification*)notification {
+  self.carMedia.reverse = !self.carMedia.reverse;
   
   [self.carMedia startAnimator];
   
