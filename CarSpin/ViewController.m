@@ -88,10 +88,16 @@
   
   [self.carView attachMedia:media];
   
-  if (FALSE) {
-//    self.carView.backgroundColor = [UIColor greenColor];
+  if (TRUE) {
+    // Cycle background color change animation to demonstrate alpha channel
     
+    self.carView.backgroundColor = [UIColor greenColor];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:5.0];
+    [UIView setAnimationRepeatCount:30];
+    [UIView setAnimationRepeatAutoreverses:TRUE];
     self.carView.backgroundColor = [UIColor whiteColor];
+    [UIView commitAnimations];
   }
   
   media.animatorRepeatCount = INT_MAX;
@@ -110,6 +116,11 @@
   self.view.backgroundColor = [UIColor redColor];
   
   NSAssert(self.carView, @"carView");
+  
+  // Note that the width x height of the view is not known at this point, because the view is being
+  // loaded and it can be resized or rotated to fit initial app launch state.
+  
+  //NSLog(@"self.carView %dx%d", (int)self.carView.bounds.size.width, (int)self.carView.bounds.size.height);
   
   [self prepareCarMedia];
   
