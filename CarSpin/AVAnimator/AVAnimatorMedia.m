@@ -363,6 +363,10 @@
 
 - (void) _loadResourcesCallback:(NSTimer *)timer
 {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
 #ifdef DEBUG_OUTPUT
   NSLog(@"AVAnimatorMedia: _loadResourcesCallback");
 #endif
@@ -455,6 +459,10 @@
 
 - (void) prepareToAnimate
 {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
 	if (self.isReadyToAnimate) {
 		return;
 	} else if (self.state == PREPPING) {
@@ -563,6 +571,10 @@
 
 - (void) startAnimator
 {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
 #ifdef DEBUG_OUTPUT
 	if (TRUE) {
 		NSLog(@"startAnimator: ");
@@ -697,6 +709,10 @@
 
 - (void) stopAnimator
 {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
 #ifdef DEBUG_OUTPUT
 	if (TRUE) {
 		NSLog(@"stopAnimator: ");
@@ -775,6 +791,10 @@
 
 - (void) pause
 {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
   if (self.state != ANIMATING) {
     // Ignore since an odd race condition could happen when window is put away or when
     // incoming call triggers this method.
@@ -816,6 +836,10 @@
 
 - (void) unpause
 {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
   if (self.state != PAUSED) {
     return;
   }
@@ -1076,6 +1100,10 @@
 // loop will display the next frame as soon as possible.
 
 - (void) _animatorDecodeFrameCallback: (NSTimer *)timer {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
   if (self.state != ANIMATING) {
     NSAssert(FALSE, @"state is not ANIMATING in _animatorDecodeFrameCallback : %@", [self description]);
   }
@@ -1326,6 +1354,10 @@
 // as soon as possible.
 
 - (void) _animatorDisplayFrameCallback: (NSTimer *)timer {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
   if (self->m_state != ANIMATING) {
     NSAssert(FALSE, @"state is not ANIMATING in _animatorDisplayFrameCallback : %@", [self description]);
   }
@@ -1385,6 +1417,10 @@
 // should only be called when the animator is not running.
 
 - (void) showFrame: (NSInteger) frame {
+#if defined(DEBUG)
+  assert([NSThread currentThread] == [NSThread mainThread]);
+#endif // DEBUG
+  
 	if ((frame >= self.animatorNumFrames) || (frame < 0) || frame == self.currentFrame)
 		return;
 	
@@ -1474,11 +1510,11 @@
   int actualFrameNum = (int) nextFrameNum;
   if (self.reverse) {
     actualFrameNum = (int)self.frameDecoder.numFrames - 1 - (int)nextFrameNum;
-    //NSLog(@"reverse : nextFrameNum %d : actualFrameNum %d", nextFrameNum, actualFrameNum);
+    //NSLog(@"reverse : nextFrameNum %d : actualFrameNum %d", (int)nextFrameNum, (int)actualFrameNum);
     
     [decoder rewind];
   } else {
-    //NSLog(@"nextFrameNum %d : actualFrameNum %d", nextFrameNum, actualFrameNum);
+    //NSLog(@"nextFrameNum %d : actualFrameNum %d", (int)nextFrameNum, (int)actualFrameNum);
   }
   
   AVFrame *frame = [decoder advanceToFrame:actualFrameNum];
