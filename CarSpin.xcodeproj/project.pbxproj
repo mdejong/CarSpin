@@ -427,6 +427,7 @@
 				TargetAttributes = {
 					3C80C2531BEABC1B003910B9 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 9F74CLHA49;
 					};
 				};
 			};
@@ -635,6 +636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
 				INFOPLIST_FILE = CarSpin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -647,6 +649,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9F74CLHA49;
 				ENABLE_NS_ASSERTIONS = YES;
 				INFOPLIST_FILE = CarSpin/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;

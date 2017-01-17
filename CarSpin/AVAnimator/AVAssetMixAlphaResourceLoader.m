@@ -1,5 +1,5 @@
 //
-//  AVAssetJoinAlphaResourceLoader.m
+//  AVAssetMixAlphaResourceLoader.m
 //
 //  Created by Moses DeJong on 1/1/13.
 //
@@ -258,7 +258,7 @@
   AVMvidFileWriter *fileWriter = [AVMvidFileWriter aVMvidFileWriter];
   NSAssert(fileWriter, @"fileWriter");
   
-  fileWriter.genV3PageOffsetBlocks = TRUE;
+  fileWriter.genV3 = TRUE;
   
   fileWriter.mvidPath = joinedMvidPath;
   fileWriter.bpp = 32;
